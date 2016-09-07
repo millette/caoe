@@ -1,26 +1,34 @@
 $(function () {
-  var $img
+  const apiURL = 'https://openclipart.org/search/json/'
   const $sort = $('#sort')
   const $search = $('#search')
-  $('form').submit(function (ev) {
+  const imgClick = function (ev) {
+    const $self = $(this)
     ev.preventDefault()
-    const search = $search.val()
-    const sortType = $sort.val()
+    $self.fadeOut(function () { $self.remove() })
+  }
+
+  const addImg = function (img) {
+    const $img = $('<img class="thumbnail" src="' + img.svg.png_thumb + '">')
+    $img.one('load', function (ev) { $(this).fadeIn() })
+    $img.click(imgClick)
+    const $el = $('<div class="column small-6 medium-4 large-2">')
+    $el.html($img)
+    $('#images').prepend($el)
+  }
+
+  const addImgs = function (data) { data.payload.forEach(addImg) }
+
+  const formSubmit = function (ev) {
+    ev.preventDefault()
     const query = {
-      query: search,
-      amount: 10,
-      sort: sortType
+      query: $search.val(),
+      amount: 12,
+      sort: $sort.val()
     }
-    console.log(search, sortType)
-    $.getJSON('https://openclipart.org/search/json/', query, function (data) {
-      data.payload.forEach(function (img) {
-        if (img.svg && img.svg.png_thumb) {
-          $img = $('<img style="display: none" src="' + img.svg.png_thumb + '">')
-          $img.one('load', function () { $(this).fadeIn() })
-          $('#images').prepend($img)
-        }
-      })
-      $(document).foundation()
-    })
-  })
+    $.getJSON(apiURL, query, addImgs)
+  }
+
+  $(document).foundation()
+  $('form').submit(formSubmit)
 })
