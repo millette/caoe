@@ -32,7 +32,6 @@ $(function () {
   }
 
   const addImgs = function (data) {
-    $modal.foundation('close')
     if (debug) { $('pre').text(JSON.stringify(data, null, ' ')) }
     $go.text('Go').removeClass('warning')
     $form.prop('disabled', false)
@@ -49,6 +48,7 @@ $(function () {
     ev.preventDefault()
     $go.text('1s.').addClass('warning')
     $form.prop('disabled', true)
+    $modal.foundation('close')
     $.getJSON(apiURL, query, addImgs)
   }
 
