@@ -1,0 +1,33 @@
+{
+  "name": "caoe",
+  "version": "0.0.1",
+  "description": "OpenClipart Explorer.",
+  "repository": "millette/caoe",
+  "scripts": {
+    "lint": "standard",
+    "test": "standard && nyc ava",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "keywords": [
+    "OpenClipart"
+  ],
+  "author": {
+    "name": "Robin Millette",
+    "email": "robin@millette.info",
+    "url": "http://robin.millette.info"
+  },
+  "license": "AGPL-3.0",
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "babel-eslint": "^6.1.2",
+    "coveralls": "^2.11.12",
+    "nyc": "^8.1.0",
+    "standard": "^8.0.0"
+  },
+  "standard": {
+    "parser": "babel-eslint"
+  }
+}
