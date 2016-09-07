@@ -10,4 +10,4 @@
 ## License
 AGPL-v3 © [Robin Millette](http://robin.millette.info)
 
-[Démo]: <https://caoe-cwlskdrqdh.now.sh/>
+[Démo]: <https://caoe-svulxvhjks.now.sh/>
