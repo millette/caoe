@@ -6,13 +6,42 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>OpenClipart Explorer</title>
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.css" integrity="sha256-d0O0RqD1Znb+7fJMu0uPCNCBHMt7gYVguCC5Z+M9vFw=" crossorigin="anonymous" />
+<style>
+#go {
+  margin-top: 8px;
+}
+.thumbnail {
+  display: none;
+  height: 140px;
+}
+</style>
 </head>
 <body>
-<h1>OpenClipart Explorer</h1>
 <form>
-Search: <input id="search" type="text"> <select id="sort"><option>date</option><option>downloads</option><option>favorites</option></select> <input type="submit">
+  <div class="row column">
+    <h1 class="title">OpenClipart Explorer</h1>
+  </div>
+  <div class="row">
+    <div class="medium-4 column">
+      <label>Search
+        <input id="search" type="text">
+      </label>
+    </div>
+    <div class="medium-4 column">
+      <label>Sort
+        <select id="sort">
+          <option>date</option>
+          <option>downloads</option>
+          <option>favorites</option>
+        </select>
+      </label>
+    </div>
+    <div class="medium-4 column">
+      <button id="go" class="button large">Go</button>
+    </div>
+  </div>
 </form>
-<div id="images"></div>
+<div class="row expanded" id="images"></div>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.js" integrity="sha256-orE03LSc9KVys7WmCWaOa5LauIvfUpJeaiKbggQBB+8=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="/main.js"></script>
