@@ -26,17 +26,26 @@
   height: 160px;
   cursor: pointer;
 }
+
+.what-no-js {
+  display: none;
+}
+
+.no-js .what-no-js {
+  display: block;
+}
+
 </style>
 </head>
 <body>
 <div class="row column">
-  <form>
+  <form action="https://openclipart.org/search/">
     <h1 class="title">Explorateur OpenClipart</h1>
   </div>
   <div class="row">
     <div class="medium-4 column">
       <label>Chercher
-        <input id="search" type="text">
+        <input id="search" name="query" type="text">
       </label>
     </div>
     <div class="medium-4 column">
@@ -61,7 +70,7 @@
 <div class="row column">
 <p>Sources: <a href="https://github.com/millette/caoe">https://github.com/millette/caoe</a>
 par <a href="http://robin.millette.info/">Robin Millette</a>
-et construit sur <a href="https://openclipart.org/">openclipart.org</a>.</p>
+et construit sur le contenu et l'API de <a href="https://openclipart.org/">openclipart.org</a>.</p>
 <p>Possible grace à ces logiciels:</p>
 <ul class="menu expanded">
   <li><a href="http://jquery.com/">jQuery</a></li>
@@ -91,6 +100,16 @@ et construit sur <a href="https://openclipart.org/">openclipart.org</a>.</p>
   <button class="close-button" data-close aria-label="Close reveal" type="button">
     <span aria-hidden="true">&times;</span>
   </button>
+</div>
+<div class="what-no-js row column">
+  <p class="lead">Il semble que vous n'ayez pas activé le JavaScript dans votre fureteur
+  ou bien il ne supporte pas le JavaScript. Malheureusement,
+  ce site fonctionne uniquement avec ce langage.</p>
+  <p>Vous pouvez consulter le site officel
+  <a href="https://openclipart.org/">openclipart.org</a> pour faire une
+  recherche à cet endroit. Vous pouvez aussi une recherche à partir de
+  ce site et si vous n'avez pas de JavaScript, votre recherche
+  se poursuivra automatiquement sur le site officiel.</p>
 </div>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.js" integrity="sha256-orE03LSc9KVys7WmCWaOa5LauIvfUpJeaiKbggQBB+8=" crossorigin="anonymous"></script>
