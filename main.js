@@ -61,6 +61,7 @@ $(function () {
     $modal.foundation('open')
   }
 
+  // add a single image and onClick handler
   const addImg = function (img) {
     const $img = $('<img class="thumbnail" src="' + img.svg.png_thumb + '">')
     $img.data('info', img)
@@ -71,6 +72,7 @@ $(function () {
     $images.append($el)
   }
 
+  // clear and add all images in the array data.payload
   const addImgs = function (data) {
     clearInterval(timer)
     $images.empty()
@@ -95,6 +97,7 @@ $(function () {
     }
   })()
 
+  // search using API and return results
   const fetchResults = function () {
     const query = {
       query: $search.val(),
@@ -113,6 +116,7 @@ $(function () {
     fetchResults()
   }
 
+  // prepare handlers
   const setup = function () {
     $(document).foundation()
     $form.submit(formSubmit)
