@@ -5,6 +5,7 @@ $(function () {
   const apiURL = 'https://openclipart.org/search/json/'
   const $sort = $('#sort')
   const $search = $('#search')
+  const $count = $('#count')
   const $images = $('#images')
   const $go = $('#go')
   const $form = $('form')
@@ -42,7 +43,7 @@ $(function () {
   const formSubmit = function (ev) {
     const query = {
       query: $search.val(),
-      amount: 12,
+      amount: $count.val(),
       sort: $sort.val()
     }
     ev.preventDefault()

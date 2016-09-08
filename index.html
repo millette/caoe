@@ -4,32 +4,43 @@
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>OpenClipart Explorer</title>
+<title>Explorateur OpenClipart</title>
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.2/motion-ui.min.css" integrity="sha256-6DnSHGMyveq3i1lcGpOTw3ivYOf4nPkTfdZ085EOUjE=" crossorigin="anonymous" />
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.css" integrity="sha256-d0O0RqD1Znb+7fJMu0uPCNCBHMt7gYVguCC5Z+M9vFw=" crossorigin="anonymous" />
 <style>
 #go {
   margin-top: 8px;
 }
+
+#images {
+  margin-top: 2em;
+}
+
+.tags_array > .label {
+  cursor: pointer;
+  margin: 0.5em;
+}
+
 .thumbnail {
   display: none;
-  height: 140px;
+  height: 160px;
+  cursor: pointer;
 }
 </style>
 </head>
 <body>
 <div class="row column">
   <form>
-    <h1 class="title">OpenClipart Explorer</h1>
+    <h1 class="title">Explorateur OpenClipart</h1>
   </div>
   <div class="row">
     <div class="medium-4 column">
-      <label>Search
+      <label>Chercher
         <input id="search" type="text">
       </label>
     </div>
     <div class="medium-4 column">
-      <label>Sort
+      <label>Trier
         <select id="sort">
           <option>date</option>
           <option>downloads</option>
@@ -37,7 +48,12 @@
         </select>
       </label>
     </div>
-    <div class="medium-4 column">
+    <div class="medium-2 column">
+      <label>Limite
+        <input id="count" type="number" value="24" step="6">
+      </label>
+    </div>
+    <div class="medium-2 column">
       <button id="go" class="button large">Go</button>
     </div>
   </form>
@@ -47,6 +63,13 @@
 <p>Sources: <a href="https://github.com/millette/caoe">https://github.com/millette/caoe</a>
 par <a href="http://robin.millette.info/">Robin Millette</a>
 et construit sur <a href="https://openclipart.org/">openclipart.org</a>.</p>
+<p>Possible grace à ces logiciels:</p>
+<ul class="menu expanded">
+  <li><a href="http://jquery.com/">jQuery</a></li>
+  <li><a href="http://foundation.zurb.com/">Foundation</a></li>
+  <li><a href="http://zurb.com/playground/motion-ui">Motion-UI</a></li>
+  <li><a href="http://leonidas.github.io/transparency/">Transparency</a></li>
+</ul>
 </div>
 
 <pre></pre>
