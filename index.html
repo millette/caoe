@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="row column">
-  <form action="https://openclipart.org/search/">
+  <form action="//openclipart.org/search/">
     <h1 class="title">Explorateur OpenClipart</h1>
   </div>
   <div class="row">
@@ -22,7 +22,7 @@
     </div>
     <div class="medium-4 column">
       <label>Trier
-        <select id="sort">
+        <select id="sort" name="sort">
           <option value="date">date</option>
           <option value="downloads">downloads</option>
           <option value="favorites">favoris</option>
@@ -31,7 +31,7 @@
     </div>
     <div class="medium-2 column">
       <label>Limite
-        <input id="count" type="number" value="24" min="1" max="200">
+        <input id="count" name="amount" type="number" value="24" min="1" max="200">
       </label>
     </div>
     <div class="medium-2 column">
@@ -57,12 +57,12 @@ et construit sur le contenu et l'API de <a href="https://openclipart.org/">openc
   <div class="column medium-6">
   <p class="description lead">desc...</p>
   <dl>
-    <dt>Favoris</dt><dd class="total_favorites"></dd>
-    <dt>Tags</dt><dd class="tags_array">
+    <dt>Favoris:</dt><dd class="stat total_favorites"></dd>
+    <dt>Téléchargements:</dt><dd class="stat downloaded_by"></dd>
+    <dt>Tags:</dt><dd class="tags_array">
       <span class="label"></span>
     </dd>
     <dt>Créé le</dt><dd class="created"></dd>
-    <dt>Téléchargé</dt><dd class="downloaded_by"></dd>
     <dt>Taille du SVG</dt><dd class="svg_filesize"></dd>
   </dl>
   </div>
