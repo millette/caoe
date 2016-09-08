@@ -8,6 +8,7 @@ $(function () {
   const $images = $('#images')
   const $go = $('#go')
   const $form = $('form')
+  var timer
 
   const imgClick = function (ev) {
     const $self = $(this)
@@ -32,11 +33,27 @@ $(function () {
   }
 
   const addImgs = function (data) {
-    $go.text('Go').removeClass('warning')
-    $form.prop('disabled', false)
+    clearInterval(timer)
     $images.empty()
     data.payload.forEach(addImg)
+    $go.text('Go').removeClass('warning')
+    $form.prop('disabled', false)
   }
+
+  const goText = (function () {
+    var count = 0
+    var str = '1s'
+    return function () {
+      var r
+      if (++count === 3) {
+        count = 0
+        str = '1s'
+      } else {
+        for (r = 0; r < count; ++r) { str += '.' }
+      }
+      $go.text(str)
+    }
+  })()
 
   const fetchResults = function () {
     const query = {
@@ -44,7 +61,8 @@ $(function () {
       amount: $count.val(),
       sort: $sort.val()
     }
-    $go.text('1s...').addClass('warning')
+    $go.text('1s').addClass('warning')
+    timer = setInterval(goText, 500)
     $form.prop('disabled', true)
     $modal.foundation('close')
     $.getJSON(apiURL, query, addImgs)
