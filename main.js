@@ -29,7 +29,7 @@ $(function () {
     $img.click(imgClick)
     const $el = $('<div class="column small-6 medium-4 large-2">')
     $el.html($img)
-    $images.prepend($el)
+    $images.append($el)
   }
 
   const addImgs = function (data) {
@@ -62,7 +62,7 @@ $(function () {
       sort: $sort.val()
     }
     $go.text('1s').addClass('warning')
-    timer = setInterval(goText, 500)
+    timer = setInterval(goText, Math.log($count.val()) * 80)
     $form.prop('disabled', true)
     $modal.foundation('close')
     $.getJSON(apiURL, query, addImgs)
