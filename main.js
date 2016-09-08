@@ -1,7 +1,7 @@
 /* global $ */
 $(function () {
   const $modal = $('#modal')
-  const apiURL = 'https://openclipart.org/search/json/'
+  const apiURL = '//openclipart.org/search/json/'
   const $sort = $('#sort')
   const $search = $('#search')
   const $count = $('#count')
@@ -116,7 +116,7 @@ $(function () {
   const setup = function () {
     $(document).foundation()
     $form.submit(formSubmit)
-    $('.tags_array').one('click', '.label', function () {
+    $('.tags_array').on('click', '.label', function () {
       $search.val($(this).text())
       fetchResults()
     })
