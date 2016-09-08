@@ -7,6 +7,13 @@
 
 [Démo][]
 
+## Todo
+* Pager
+* Show # of items available, # of pages
+* Page.js (item links, page transitions)
+* Collect and organize images (localstorage/pouchdb)
+* Interact with openclipart (read/write)
+
 ## License
 AGPL-v3 © [Robin Millette](http://robin.millette.info)
 
