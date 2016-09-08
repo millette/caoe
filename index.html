@@ -42,9 +42,9 @@
     <div class="medium-4 column">
       <label>Trier
         <select id="sort">
-          <option>date</option>
-          <option>downloads</option>
-          <option>favorites</option>
+          <option value="date">date</option>
+          <option value="downloads">downloads</option>
+          <option value="favorites">favoris</option>
         </select>
       </label>
     </div>
@@ -58,7 +58,6 @@
     </div>
   </form>
 </div>
-
 <div class="row column">
 <p>Sources: <a href="https://github.com/millette/caoe">https://github.com/millette/caoe</a>
 par <a href="http://robin.millette.info/">Robin Millette</a>
@@ -71,21 +70,19 @@ et construit sur <a href="https://openclipart.org/">openclipart.org</a>.</p>
   <li><a href="http://leonidas.github.io/transparency/">Transparency</a></li>
 </ul>
 </div>
-
-<pre></pre>
 <div class="row expanded" id="images"></div>
 <div class="row callout success full reveal" id="modal" data-reveal data-close-on-click="true" data-animation-in="fade-in" data-animation-out="hinge-out-from-bottom">
   <h1><a class="title">title...</a> <small>par</small> <span class="uploader"></span></h1>
   <div class="column medium-6">
   <p class="description lead">desc...</p>
   <dl>
-    <dt>favorites</dt><dd class="total_favorites"></dd>
-    <dt>tags</dt><dd class="tags_array">
+    <dt>Favoris</dt><dd class="total_favorites"></dd>
+    <dt>Tags</dt><dd class="tags_array">
       <span class="label"></span>
     </dd>
-    <dt>created</dt><dd class="created"></dd>
-    <dt>downloaded by</dt><dd class="downloaded_by"></dd>
-    <dt>svg filesize</dt><dd class="svg_filesize"></dd>
+    <dt>Créé le</dt><dd class="created"></dd>
+    <dt>Téléchargé</dt><dd class="downloaded_by"></dd>
+    <dt>Taille du SVG</dt><dd class="svg_filesize"></dd>
   </dl>
   </div>
   <div class="column medium-6">
