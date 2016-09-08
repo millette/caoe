@@ -1,6 +1,5 @@
 /* global $ */
 $(function () {
-  const debug = false
   const $modal = $('#modal')
   const apiURL = 'https://openclipart.org/search/json/'
   const $sort = $('#sort')
@@ -33,31 +32,34 @@ $(function () {
   }
 
   const addImgs = function (data) {
-    if (debug) { $('pre').text(JSON.stringify(data, null, ' ')) }
     $go.text('Go').removeClass('warning')
     $form.prop('disabled', false)
     $images.empty()
     data.payload.forEach(addImg)
   }
 
-  const formSubmit = function (ev) {
+  const fetchResults = function () {
     const query = {
       query: $search.val(),
       amount: $count.val(),
       sort: $sort.val()
     }
-    ev.preventDefault()
-    $go.text('1s.').addClass('warning')
+    $go.text('1s...').addClass('warning')
     $form.prop('disabled', true)
     $modal.foundation('close')
     $.getJSON(apiURL, query, addImgs)
   }
 
+  const formSubmit = function (ev) {
+    ev.preventDefault()
+    fetchResults()
+  }
+
   $(document).foundation()
 
-  $('.tags_array').on('click', '.label', function (ev) {
+  $('.tags_array').on('click', '.label', function () {
     $search.val($(this).text())
-    formSubmit(ev)
+    fetchResults()
   })
 
   $form.submit(formSubmit)
