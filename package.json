@@ -9,7 +9,7 @@
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "engines": {
-    "node": ">=4"
+    "node": ">=10.16.0"
   },
   "keywords": [
     "OpenClipart"
@@ -22,12 +22,8 @@
   "license": "AGPL-3.0",
   "devDependencies": {
     "ava": "^0.17.0",
-    "babel-eslint": "^7.1.1",
     "coveralls": "^2.11.15",
     "nyc": "^10.0.0",
-    "standard": "^8.6.0"
-  },
-  "standard": {
-    "parser": "babel-eslint"
+    "standard": "^13.0.2"
   }
 }
