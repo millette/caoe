@@ -4,9 +4,7 @@
   "description": "OpenClipart Explorer.",
   "repository": "millette/caoe",
   "scripts": {
-    "lint": "standard",
-    "test": "standard && nyc ava",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "lint": "standard"
   },
   "engines": {
     "node": ">=10.16.0"
@@ -21,9 +19,6 @@
   },
   "license": "AGPL-3.0",
   "devDependencies": {
-    "ava": "^0.17.0",
-    "coveralls": "^2.11.15",
-    "nyc": "^10.0.0",
     "standard": "^13.0.2"
   }
 }
