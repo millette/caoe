@@ -4,7 +4,7 @@
   "description": "OpenClipart Explorer.",
   "repository": "millette/caoe",
   "scripts": {
-    "lint": "standard"
+    "test": "standard"
   },
   "engines": {
     "node": ">=10.16.0"
@@ -19,6 +19,6 @@
   },
   "license": "AGPL-3.0",
   "devDependencies": {
-    "standard": "^13.0.2"
+    "standard": "^14.0.2"
   }
 }
